@@ -13,7 +13,7 @@
   "package-specs": [
     {
       "module": "es6",
-      "in-sources": true
+      "in-source": true
     }
   ],
   "bs-dependencies": ["@rescript/react", "bs-fetch", "@ryyppy/rescript-promise"]
