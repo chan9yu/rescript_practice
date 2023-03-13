@@ -1,0 +1,20 @@
+{
+  "name": "rescript-react-todo",
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-sources": true
+    }
+  ],
+  "bs-dependencies": ["@rescript/react", "bs-fetch", "@ryyppy/rescript-promise"]
+}
