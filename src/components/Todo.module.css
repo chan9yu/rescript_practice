@@ -1,0 +1,24 @@
+hr {
+  margin-bottom: 0;
+}
+
+.item {
+  padding-top: 0.3rem;
+}
+
+.item:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.item * {
+  cursor: inherit;
+}
+
+.item span {
+  margin-right: 0.5rem;
+}
+
+.item button:hover {
+  background-color: white;
+}
