@@ -1,0 +1,22 @@
+rescript = 1
+g_finger := /Users/changyu/Changyu/practice/rescript-with-react/node_modules/@rescript/react/lib/ocaml/install.stamp
+g_finger := /Users/changyu/Changyu/practice/rescript-with-react/node_modules/bs-fetch/lib/ocaml/install.stamp
+g_finger := /Users/changyu/Changyu/practice/rescript-with-react/node_modules/@ryyppy/rescript-promise/lib/ocaml/install.stamp
+rule astj
+  command = /Users/changyu/Changyu/practice/rescript-with-react/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.3 -bs-jsx 4 -bs-jsx-mode automatic  -absname -bs-ast -o $out $i
+o src/App.ast : astj ../../src/App.res
+rule deps
+  command = /Users/changyu/Changyu/practice/rescript-with-react/node_modules/rescript/darwinarm64/bsb_helper.exe -hash ffaf19e0cfe942f6b0f2ce9b30d27de6 $in
+  restat = 1
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/changyu/Changyu/practice/rescript-with-react/node_modules/rescript/darwinarm64/bsc.exe -I src/styles -I src/components -I src -I /Users/changyu/Changyu/practice/rescript-with-react/node_modules/@rescript/react/lib/ocaml -I /Users/changyu/Changyu/practice/rescript-with-react/node_modules/bs-fetch/lib/ocaml -I /Users/changyu/Changyu/practice/rescript-with-react/node_modules/@ryyppy/rescript-promise/lib/ocaml   -bs-package-name rescript-react-todo -bs-package-output es6:$in_d:.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/App.cmj src/App.cmi ../../src/App.js : mij src/App.ast
+o src/main.ast : astj ../../src/main.res
+o src/main.d : deps src/main.ast
+o src/main.cmj src/main.cmi ../../src/main.js : mij src/main.ast
+o src/components/Todo.ast : astj ../../src/components/Todo.res
+o src/components/Todo.d : deps src/components/Todo.ast
+o src/components/Todo.cmj src/components/Todo.cmi ../../src/components/Todo.js : mij src/components/Todo.ast

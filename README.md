@@ -7,7 +7,7 @@ TodoList practice using rescript and react
 external 키워드 사용하여 css 적용
 
 ```rescript
-@module external styles: {..} = "./Todo.module.css"
+@module external styles: {..} = "./T`odo.module.css"
 
 @react.component
 let make = () => {
